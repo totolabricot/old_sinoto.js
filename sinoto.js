@@ -7,12 +7,12 @@ function setup() {
   for (var i=0; i<nboscilo; i++) {
     oscilos.push(new oscilo(i,i+60,10,10+i*15));
   }
-clavier("sinoto");
+  
 }
 
 function draw() {
 background(255);
-clavier();
+clavier.aff();
 //aff(phrase);
 
 
@@ -25,6 +25,8 @@ for (var i=0; i<nboscilo; i++) {
 }
 
 function keyPressed() {
+
+  clavier.getletter();
 
   if (keyCode === 32) {
     for (var i=0; i<nboscilo; i++) {
