@@ -1,19 +1,22 @@
 
 var oscilos= [];
+var nboscilo= 40;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  for (var i=0; i<50; i++) {
-    oscilos.push(new oscilo(i+60,10,100+i*20));
+  for (var i=0; i<nboscilo; i++) {
+    oscilos.push(new oscilo(i,i+60,10,10+i*15));
   }
-
+clavier("sinoto");
 }
 
 function draw() {
-  background(255);
+background(255);
 clavier();
+//aff(phrase);
 
-for (var i=0; i<50; i++) {
+
+for (var i=0; i<nboscilo; i++) {
   oscilos[i].aff();
 }
 
@@ -24,7 +27,7 @@ for (var i=0; i<50; i++) {
 function keyPressed() {
 
   if (keyCode === 32) {
-    for (var i=0; i<50; i++) {
+    for (var i=0; i<nboscilo; i++) {
       oscilos[i].volume(0);
     }
 

@@ -1,5 +1,6 @@
-function oscilo(freq,x,y){
+function oscilo(id,freq,x,y){
 
+  this.id=id;
   this.freq=freq;
   this.amp=1;
   this.playing = false;
@@ -10,12 +11,14 @@ function oscilo(freq,x,y){
   this.osc.start();
 
   this.volume = function(){
-    this.osc.amp(0);
+    if (this.osc.amp()==0) this.osc.amp(1);
+    if (this.osc.amp()==1) this.osc.amp(0);
   }
 
   this.aff = function(){
-  text("fr => "+this.freq,x,y);
-  text("vol => "+this.amp,x+100,y);
+  text("osc~ "+this.id,x,y)
+  text("fr => "+this.freq,x+80,y);
+  text("vol => "+this.amp,x+160,y);
   }
 
 }
