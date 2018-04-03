@@ -11,12 +11,12 @@ function oscilo(id,freq,x,y){
   this.osc.start();
 
   this.applyfreq = function(freq){
-  this.freq=freq;
-  this.osc.amp(this.freq);
+  this.freq=int(freq);
+  this.osc.freq(this.freq);
 },
 
  this.applyvol = function(amp){
- this.amp=amp;
+ this.amp=int(amp);
  this.osc.amp(this.amp);
 },
 
