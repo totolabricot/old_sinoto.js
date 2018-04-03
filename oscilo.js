@@ -2,7 +2,7 @@ function oscilo(id,freq,x,y){
 
   this.id=id;
   this.freq=freq;
-  this.amp=1;
+  this.amp=0;
   this.playing = false;
   this.osc = new p5.Oscillator();
   this.osc.setType('sine');
@@ -10,15 +10,15 @@ function oscilo(id,freq,x,y){
   this.osc.amp(this.amp);
   this.osc.start();
 
-  this.volume = function(){
+  this.volume = function(volu){
     if (this.osc.amp()==0) this.osc.amp(1);
     if (this.osc.amp()==1) this.osc.amp(0);
   }
 
   this.aff = function(){
-  text("osc~ "+this.id,x,y)
-  text("fr => "+this.freq,x+80,y);
-  text("vol => "+this.amp,x+160,y);
+  text("osc~ "+this.id,x,y+100)
+  text("fr => "+this.freq,x+80,y+100);
+  text("vol => "+this.amp,x+160,y+100);
   }
 
 }
