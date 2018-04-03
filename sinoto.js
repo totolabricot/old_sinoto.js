@@ -28,9 +28,5 @@ function keyPressed() {
 
 clavier.getletter();
 
-  if (keyCode === 32) {
-    for (var i=0; i<nboscilo; i++) {
-      oscilos[i].volume(0);
-    }
-  }
+  
 }

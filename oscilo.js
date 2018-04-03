@@ -10,10 +10,15 @@ function oscilo(id,freq,x,y){
   this.osc.amp(this.amp);
   this.osc.start();
 
-  this.volume = function(volu){
-    if (this.osc.amp()==0) this.osc.amp(1);
-    if (this.osc.amp()==1) this.osc.amp(0);
-  }
+  this.applyfreq = function(freq){
+  this.freq=freq;
+  this.osc.amp(this.freq);
+},
+
+ this.applyvol = function(amp){
+ this.amp=amp;
+ this.osc.amp(this.amp);
+},
 
   this.aff = function(){
   text("osc~ "+this.id,x,y+100)
