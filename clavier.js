@@ -21,7 +21,9 @@ if (keyCode === 13) {
   this.phrase="";
   commandes.check(cmd);
 }
-  else{  this.lettre=key;
+if (keyCode !==8 && keyCode !== 13){
+    console.log("nique");
+     this.lettre=key;
     this.phrase+=key;
      }
   }

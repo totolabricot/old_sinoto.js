@@ -1,6 +1,6 @@
 
 var oscilos= [];
-var nboscilo= 10;
+var nboscilo= 20;
 var cmd="";
 var id;
 
