@@ -22,7 +22,7 @@ if (keyCode === 13) {
   commandes.check(cmd);
 }
 if (keyCode !==8 && keyCode !== 13){
-    console.log("nique");
+  console.log(key);
      this.lettre=key;
     this.phrase+=key;
      }

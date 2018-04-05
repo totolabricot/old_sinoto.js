@@ -16,7 +16,7 @@ function oscilo(id,freq,x,y){
 },
 
  this.applyvol = function(amp){
- this.amp=float(amp/100);
+ this.amp=float(amp/1000);
  this.osc.amp(this.amp);
 },
 
