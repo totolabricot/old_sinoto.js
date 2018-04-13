@@ -1,19 +1,19 @@
 
 var oscilos= [];
-var nboscilo= 152;
+var nboscilo= 100;
 var cmd="";
 var id;
-var x=50;
+var x=10;
 var y=10;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
+ frameRate(10);
   for (var i=0; i<nboscilo; i++) {
 
-    if (y>windowHeight-150){
+    if (y>windowHeight-200){
     y=10;
-    x+=300
+    x+=165
 
     }
   oscilos.push(new oscilo(i,60+i,x,y));
@@ -31,6 +31,7 @@ function windowResized() {
 function draw() {
 background(255);
 clavier.aff();
+datavis.affline();
 
 
 for (var i=0; i<nboscilo; i++) {
@@ -41,6 +42,7 @@ for (var i=0; i<nboscilo; i++) {
 function keyPressed() {
 
 clavier.getletter();
+  //console.log(keyCode);
 
 
 }
