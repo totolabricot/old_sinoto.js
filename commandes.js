@@ -3,6 +3,7 @@ phrase:"",
 id: "",
 freq: 0,
 vol: 0,
+timevol:"",
 mute: false,
 
 check: function(cmd){
@@ -48,7 +49,7 @@ else {
 }
 }
 
-if (this.phrase[1]!='V' && this.phrase[1]!='F' && this.phrase[1]!='M'&& this.phrase[0]!='S'&& this.phrase[0]!='L'){ ///////////////////////// FREQUENCE ET VOLUME
+if (this.phrase[1]!='V' && this.phrase[1]!='F' && this.phrase[1]!='M'&& this.phrase[0]!='S'&& this.phrase[0]!='L'&& this.phrase[0]!='T'){ ///////////////////////// FREQUENCE ET VOLUME
 this.freq=float(split(this.phrase[1],'<'));
 this.vol=float(split(this.phrase[2],'<'));
 
@@ -101,10 +102,22 @@ sauvegarde.gosave();
 if (this.phrase[0]=='L'){ ///////////////////////// RELOAD
  loadsession.createload(this.phrase[1]);
 for (var i =0; i<nboscilo;i++){
-
+}
 }
 
-}
+if (this.phrase[0]=='T'){ ///////////////////////// RELOAD
+ if (float(this.phrase[1])>0)timeline.initialtimer(this.phrase[1]);
+ if (this.phrase[1]=="GO")activtimer=true;
+ if (this.phrase[1]=="STOP"){
+   activtimer=false;
+   timeline.reinitimer();
+ }
+ if (this.phrase[1]=="P"){
+timeline.pok(this.phrase[2]);
+//console.log(this.phrase[2]);
+   }
+ }
+
 
 
 }

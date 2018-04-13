@@ -5,6 +5,7 @@ function oscilo(id,freq,x,y){
   this.amp=0;
   this.mute=false;
   this.playing = false;
+  this.voltoggle =false;
   this.osc = new p5.Oscillator();
   this.osc.setType('sine');
   this.osc.amp(this.amp);
@@ -20,6 +21,16 @@ function oscilo(id,freq,x,y){
 this.amp=amp/100;
 },
 
+this.linktotime= function(voltoggle){
+if (voltoggle==true){
+  this.voltoggle=!this.voltoggle;
+  //console.log(this.voltoggle);
+if (this.voltoggle==true)this.osc.amp(this.amp/2);
+if (this.voltoggle==false)this.osc.amp(this.amp);
+}
+},
+
+
 this.applymute = function(switchmute){
 
 if (switchmute==true){
@@ -34,8 +45,6 @@ if (this.mute==false){
 }
 
 },
-
-
 
 
   this.aff = function(){
@@ -74,7 +83,7 @@ this.loadback= function(listbackup){
   this.amp=float(this.listbackup[2]);
   this.osc.amp(this.amp);
 
-console.log(this.listbackup);
+//console.log(this.listbackup);
 }
 
 
