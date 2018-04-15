@@ -3,7 +3,7 @@ phrase:"",
 id: "",
 freq: 0,
 vol: 0,
-timevol:"",
+toggles:"",
 mute: false,
 
 check: function(cmd){
@@ -49,7 +49,7 @@ else {
 }
 }
 
-if (this.phrase[1]!='V' && this.phrase[1]!='F' && this.phrase[1]!='M'&& this.phrase[0]!='S'&& this.phrase[0]!='L'&& this.phrase[0]!='T'){ ///////////////////////// FREQUENCE ET VOLUME
+if (this.phrase[1]!='V' && this.phrase[1]!='F' && this.phrase[1]!='M'&& this.phrase[0]!='S'&& this.phrase[0]!='L'&& this.phrase[0]!='T' && this.phrase[1]!='I'){ ///////////////////////// FREQUENCE ET VOLUME
 this.freq=float(split(this.phrase[1],'<'));
 this.vol=float(split(this.phrase[2],'<'));
 
@@ -93,9 +93,11 @@ else {
 
 if (this.phrase[0]=='S'){ ///////////////////////// SAUVEGARDE
   sauvegarde.createsauv(this.phrase[1]);
+  timeline.sauv();
 for (var i =0; i<nboscilo;i++){
 oscilos[i].sauv();
 }
+
 sauvegarde.gosave();
 }
 
@@ -112,12 +114,23 @@ if (this.phrase[0]=='T'){ ///////////////////////// RELOAD
    activtimer=false;
    timeline.reinitimer();
  }
- if (this.phrase[1]=="P"){
-timeline.pok(this.phrase[2]);
-//console.log(this.phrase[2]);
+}
+
+ if (this.phrase[1]=="I"){ ////////////////////////////////////////////// ICICICICIICICICICI
+
+   if (this.id[1]>0){
+     for (var i=int(this.id[0]); i<int(this.id[1])+1;i++) {
+       if (this.phrase[2]=="E")oscilos[i].resetpok();
+      if (this.phrase[2]!="E")   oscilos[i].setpok(this.phrase[2]);}
    }
+
+ else{
+   if (this.phrase[2]!="E")oscilos[this.phrase[0]].setpok(this.phrase[2]);
+   if (this.phrase[2]=="E")oscilos[this.phrase[0]].resetpok();
  }
 
+
+   }
 
 
 }

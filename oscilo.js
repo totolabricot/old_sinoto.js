@@ -6,11 +6,17 @@ function oscilo(id,freq,x,y){
   this.mute=false;
   this.playing = false;
   this.voltoggle =false;
+  this.timer=0;
+  this.duree=0;
+  this.pok=""; ////////////////////////////////////// la liste de pok doit etre inclu dan sl'ocsilo et non dans la timeline;
+  this.poklist="";
+  this.xpok="";
   this.osc = new p5.Oscillator();
   this.osc.setType('sine');
   this.osc.amp(this.amp);
   this.osc.start();
   this.osc.freq(freq);
+
 
   this.applyfreq = function(freq){
   this.freq=freq;
@@ -21,13 +27,41 @@ function oscilo(id,freq,x,y){
 this.amp=amp/100;
 },
 
-this.linktotime= function(voltoggle){
-if (voltoggle==true){
+this.setduree= function(duree){
+this.duree=duree;
+},
+
+this.settimer= function(timer){
+this.timer=timer;
+
+if (this.mute==false){
+for (var i=0; i<this.pok.length;i++){
+if (this.timer==this.pok[i]){
   this.voltoggle=!this.voltoggle;
-  //console.log(this.voltoggle);
-if (this.voltoggle==true)this.osc.amp(this.amp/2);
-if (this.voltoggle==false)this.osc.amp(this.amp);
+if (this.voltoggle==true){
+this.osc.amp(0);
 }
+if (this.voltoggle==false){
+this.osc.amp(this.amp);
+   }
+  }
+}
+}
+
+},
+
+this.setpok= function(pok){
+this.poklist=pok;
+this.pok=split(this.poklist,'<');
+console.log(this.poklist)
+},
+
+this.resetpok= function(){
+  for (var i=0; i<this.pok.length;i++){
+this.voltoggle=false;
+this.osc.amp(this.amp);
+  }
+this.pok="";
 },
 
 
@@ -58,7 +92,7 @@ if (this.mute==false){
   if (this.amp>0){
     fill(200,0,0);
   }
-  if (this.mute==true){
+  if (this.mute==true || this.voltoggle==true){
     fill(125);
   }
   text(Math.round(this.amp*1000000)/1000000,x+170,y+20); // volume
@@ -70,10 +104,20 @@ if (this.mute==false){
   line(x+40,y+7,x+40,y+7+15);
   line(x+115,y+7,x+115,y+7+15);
 
+if (int(this.pok[0])>=0){
+    for (var i=0; i<this.pok.length;i++){
+        this.xpok=map(int(this.pok[i]),0,this.duree,xtimeline,xtimeline+longtimeline);
+      //  console.log(this.xpok);
+  line(int(this.xpok),ytimeline,int(this.xpok),ytimeline+20);
+
+}
+//text(this.id,this.xpok, ytimeline+25);
+  }
+
 },
 
 this.sauv= function(){
-sauvegarde.getlines(float(this.id),float(this.freq),float(this.amp));
+sauvegarde.getlines(float(this.id),float(this.freq),float(this.amp),this.poklist);
 },
 
 this.loadback= function(listbackup){
@@ -82,8 +126,8 @@ this.loadback= function(listbackup){
   this.osc.freq(this.freq);
   this.amp=float(this.listbackup[2]);
   this.osc.amp(this.amp);
-
-//console.log(this.listbackup);
+  this.setpok(this.listbackup[3]);
+console.log(this.pok);
 }
 
 

@@ -1,15 +1,21 @@
 
 var oscilos= [];
-var nboscilo= 100;
-var cmd="";
+var nboscilo= 300;
+var cmd="SiNoTo";
 var id;
 var x=10;
 var y=10;
 var activtimer= false;
+var xtimeline;
+var ytimeline;
+var longtimeline=300
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
- frameRate(10);
+ frameRate(30);
+ xtimeline=windowWidth-(longtimeline+20);
+ ytimeline=windowHeight-240;
   for (var i=0; i<nboscilo; i++) {
     if (y>windowHeight-200){
     y=10;

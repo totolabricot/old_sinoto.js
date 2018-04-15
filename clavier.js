@@ -37,7 +37,7 @@ if (keyCode === 13) {
 }
 if (keyCode !==8 && keyCode !== 13 && keyCode !== 38 && keyCode !== 40 && keyCode<96){
     this.phrase+=key;
-     }     
+     }
 
 if (keyCode>=96 && keyCode<=105 ) {
 this.phrase+=int(keyCode-96);
