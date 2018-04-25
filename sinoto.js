@@ -39,8 +39,8 @@ datavis.affline();
 timeline.aff();
 if (activtimer==true)timeline.playtimer();
 
-for (var i=0; i<nboscilo; i++) {
-  oscilos[i].aff();
+  for (var i = 0; i < nboscilo; i++) {
+    oscilos[i].aff();
   }
 }
 
