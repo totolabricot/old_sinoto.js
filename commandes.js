@@ -113,7 +113,11 @@ if (this.phrase[0]=='T'){ ///////////////////////// RELOAD
  if (this.phrase[1]=="STOP"){
    activtimer=false;
    timeline.reinitimer();
+   for (var i=0; i<nboscilo;i++){
+
+   oscilos[i].resetvol();
  }
+}
 }
 
  if (this.phrase[1]=="I"){ ////////////////////////////////////////////// ICICICICIICICICICI

@@ -1,6 +1,6 @@
 
 var oscilos= [];
-var nboscilo= 300;
+var nboscilo= 280;
 var cmd="SiNoTo";
 var id;
 var x=10;

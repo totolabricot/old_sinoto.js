@@ -50,6 +50,11 @@ this.osc.amp(this.amp);
 
 },
 
+this.resetvol= function(){
+this.voltoggle=false;
+this.osc.amp(this.amp);
+},
+
 this.setpok= function(pok){
 this.poklist=pok;
 this.pok=split(this.poklist,'<');

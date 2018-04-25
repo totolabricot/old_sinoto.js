@@ -17,7 +17,7 @@ createload: function(nom){
 console.log("duree"+result[0]);
 
 
-for (var i=0;i<nboscilo;i++){
+for (var i=0;i<nboscilo+1;i++){
 this.listbackup=split(result[i],'|');
 
   if (i==0){
