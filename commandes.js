@@ -1,10 +1,13 @@
 var commandes = {
-<<<<<<< HEAD
+//<<<<<<< HEAD
   phrase: "",
   id: "",
   freq: 0,
   vol: 0,
-
+///////////////////////
+  toggles:"",
+  mute: false,
+/*
   check: function(cmd) {
     this.phrase = split(cmd, ' ');
     console.log(this.phrase);
@@ -34,13 +37,14 @@ var commandes = {
         oscilos[int(this.phrase[0])].applyvol(this.phrase[2]);
       }
     }
-=======
-phrase:"",
+  }
+//=======
+/*phrase:"",
 id: "",
 freq: 0,
 vol: 0,
 toggles:"",
-mute: false,
+mute: false,*/
 
 check: function(cmd){
   this.phrase=split(cmd,' ');
@@ -63,7 +67,7 @@ check: function(cmd){
     oscilos[int(this.phrase[0])].applyfreq(float(this.freq[0]));
   }
 }
->>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
+//>>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
 
     if (this.phrase[1] != 'V' && this.phrase[1] != 'F') {
       console.log("else");
@@ -79,9 +83,9 @@ check: function(cmd){
         oscilos[this.phrase[0]].applyfreq(this.freq[0]);
       }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
     }
-=======
+//=======
 if (this.phrase[1]=='V'){ //////////////////////// JUSTE VOLUME
         this.vol=float(split(this.phrase[2],'<'));
  if (int(this.id[1]>0)){
@@ -89,7 +93,7 @@ if (this.phrase[1]=='V'){ //////////////////////// JUSTE VOLUME
    if (this.vol[1]>0){
      oscilos[i].applyvol(float(this.vol[0]-this.vol[1]*(i-this.id[0])));
      oscilos[i].applymute(false);
->>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
+//>>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
 
    }
    else{ oscilos[i].applyvol(this.vol[0]);
@@ -97,8 +101,8 @@ if (this.phrase[1]=='V'){ //////////////////////// JUSTE VOLUME
    }
   }
 }
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 else {
   oscilos[int(this.phrase[0])].applyvol(this.vol[0]);
   oscilos[int(this.phrase[0])].applymute(false);
@@ -195,4 +199,4 @@ if (this.phrase[0]=='T'){ ///////////////////////// RELOAD
 
 }
 }
->>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
+//>>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d

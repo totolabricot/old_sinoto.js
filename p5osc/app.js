@@ -17,7 +17,7 @@ const io = socketIO(server);
 const publicPath = path.join(__dirname, './public');
 app.use(express.static(publicPath));
 // route home
-app.get('/', (req, res) => {
+app.get('/app', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 

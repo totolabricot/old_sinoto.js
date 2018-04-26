@@ -1,7 +1,8 @@
 var clavier = {
-<<<<<<< HEAD
+//<<<<<<< HEAD
   lettre: "",
   phrase: "",
+
 
   aff: function() {
     fill(0);
@@ -27,13 +28,16 @@ var clavier = {
       this.lettre = key;
       this.phrase += key;
     }
-=======
-phrase:"",
-lastphrase:"",
-last:"",
-historique:"",
-current: 0,
-back: 0,
+  },
+
+
+  //phrase:"",
+  lastphrase:"",
+  last:"",
+  historique:"",
+  current: 0,
+  back: 0,
+//=======
 
 aff: function(){
   textAlign(LEFT);
@@ -104,7 +108,7 @@ this.back--;
 this.phrase=this.historique[this.current-this.back]+" ";
 }
 }
->>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
+//>>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
   }
 
 

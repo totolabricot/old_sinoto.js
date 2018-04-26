@@ -1,15 +1,15 @@
 function oscilo(id, freq, x, y) {
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
   this.id = id;
   this.freq = freq;
   this.amp = 0;
-=======
+//=======
   this.id=id;
   this.freq=0;
   this.amp=0;
   this.mute=false;
->>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
+//>>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
   this.playing = false;
   this.voltoggle =false;
   this.timer=0;
@@ -24,7 +24,7 @@ function oscilo(id, freq, x, y) {
   this.osc.freq(freq);
 
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
   this.applyfreq = function(freq) {
     this.freq = int(freq);
     this.osc.freq(this.freq);
@@ -39,7 +39,7 @@ function oscilo(id, freq, x, y) {
     text("osc~ " + this.id, x, y + 100)
     text("fr => " + this.freq, x + 80, y + 100);
     text("vol => " + this.amp, x + 160, y + 100);
-=======
+//=======
   this.applyfreq = function(freq){
   this.freq=freq;
   this.osc.freq(this.freq);
@@ -121,7 +121,7 @@ if (this.mute==false){
   }
   if (this.mute==true || this.voltoggle==true){
     fill(125);
->>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
+//>>>>>>> 07b7c53af1fadf6b7ae0ea4f0da4eeb7dcc6125d
   }
   text(Math.round(this.amp*1000000)/1000000,x+170,y+20); // volume
   datavis.affreq(this.freq,this.amp,this.mute);
@@ -159,4 +159,5 @@ console.log(this.pok);
 }
 
 
+}
 }
