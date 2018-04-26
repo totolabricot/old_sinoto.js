@@ -4,7 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "9.11.1"
   },
   "author": "",
   "license": "ISC",
@@ -14,7 +17,7 @@
   },
   "dependencies": {
     "express": "4.16.3",
-    "install": "^0.11.0",
+    "ip": "^1.1.5",
     "node-osc": "2.1.0",
     "npm": "^6.0.0",
     "socket.io": "^2.1.0"

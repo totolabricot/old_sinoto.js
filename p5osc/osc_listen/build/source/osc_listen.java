@@ -22,6 +22,7 @@ public class osc_listen extends PApplet {
 
 int data;
 String user;
+String commande;
 
 OscP5 oscP5;
 NetAddress myRemoteLocation;
@@ -29,7 +30,8 @@ NetAddress myRemoteLocation;
 public void setup() {
 
   oscP5 = new OscP5(this, 8000);
-  myRemoteLocation = new NetAddress("127.0.0.1",8000);
+  println(this);
+  myRemoteLocation = new NetAddress("127.0.1.1",8000);
 
   
   frameRate(10);
@@ -39,7 +41,7 @@ public void draw() {
   background(255);
   textSize(32);
   fill(0);
-  text(data, width/2, height/2);
+  text(commande, width/2, height/2);
 
   textSize(15);
   fill(0);
@@ -52,12 +54,14 @@ public void oscEvent(OscMessage Message) {
 
   //int data1 =
 
-  data = Message.get(0).intValue();
+  // data = Message.get(0).intValue();
   user = Message.addrPattern();
+  commande = Message.get(0).stringValue();
 
   print("### received an osc message.");
   println(" addrpattern: "+Message.addrPattern());
-  println(" data: "+Message.get(0).intValue());
+  println("commande:" + Message.get(0).stringValue());
+  // println(" data: "+Message.get(0).intValue());
   //println(" data Y: "+theOscMessage.get(1).intValue());
 }
   public void settings() {  size(400, 400); }

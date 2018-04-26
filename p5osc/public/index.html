@@ -5,11 +5,20 @@
     <title>p5</title>
   </head>
   <body>
-    <h1>p5 + osc > processing</h1>
+    <div id="infos">ip</div>
 
+    <form id="message-form">
+    <input type="text" name="commande">
+    <input type="submit" value="envoi">
+    </form>
+
+    <div id="commandeback">?</div>
+
+    <script type="text/javascript" src="js/lib/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/lib/socket.io/socket.io.js"></script>
-    <script type="text/javascript" src="js/lib/p5/p5.min.js"></script>
+    <!-- <script type="text/javascript" src="js/lib/p5/p5.min.js"></script>
     <script type="text/javascript" src="js/lib/p5/addons/p5.dom.min.js"></script>
-    <script type="text/javascript" src="js/sketch.js"></script>
+    <script type="text/javascript" src="js/sketch.js"></script> -->
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
