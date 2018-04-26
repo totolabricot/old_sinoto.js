@@ -2,7 +2,7 @@
 const osc = require('node-osc');
 
 // nouvelle instance osc avec l'ip de la machine hote
-const client = new osc.Client('192.168.1.42', 12000);
+const client = new osc.Client('127.0.1.1', 8000);
 
 // fonction pour gérer l'envoi des données par udp osc
 let sendDataOsc = function (address, data2send) {

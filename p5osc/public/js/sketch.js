@@ -2,7 +2,7 @@ var socket;
 var slider;
 var data;
 // addresse de la machine hote
-var ip = 'http://192.168.1.42:3000';
+var ip = 'http://192.168.5.133:3000';
 
 function setup(){
 
